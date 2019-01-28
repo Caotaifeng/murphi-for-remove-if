@@ -1,0 +1,202 @@
+Main: Log time is Sat Jan 26 05:47:23 2019
+
+Main: Parse input file tests/loop6.c.
+Main: Type check AST.
+Main: Build CFA.
+Main: Encode CFA main.
+Main: Perform lazy abstraction.
+
+LazyAbs: Get ART node 0 (CFA node 50, line no: 9).
+LazyAbs: Check coverage ART node 0.
+LazyAbs: Expand ART node 0 (Unwind CFA node 50).
+LazyAbs: Perform transfer (post image) from CFA node 50 (line no: 9) to CFA node 51 (line no: 10).
+PredAbsTransferRelation: Important (or relevant) pre predicates are 
+PredAbsTransferRelation: Important (or relevant) post predicates are 
+PredAbsTransferRelation: Region expression TRUE
+PredAbsTransferRelation: Perform abstract post.
+PredAbsTransferRelation: Successor region expression TRUE
+LazyAbs: Add ART node 1 (CFA node 51, line no: 10) into the worklist (stack or queue).
+LazyCEGAR: Add new ART nodes in the following order: 
+LazyCEGAR: - ART node 1.
+
+LazyAbs: Get ART node 1 (CFA node 51, line no: 10).
+LazyAbs: Check coverage ART node 1.
+LazyAbs: Expand ART node 1 (Unwind CFA node 51).
+LazyAbs: Perform transfer (post image) from CFA node 51 (line no: 10) to CFA node 52 (line no: 20).
+PredAbsTransferRelation: Important (or relevant) pre predicates are 
+PredAbsTransferRelation: Important (or relevant) post predicates are 
+PredAbsTransferRelation: Region expression TRUE
+PredAbsTransferRelation: Perform abstract post.
+PredAbsTransferRelation: Successor region expression TRUE
+LazyAbs: Add ART node 2 (CFA node 52, line no: 20) into the worklist (stack or queue).
+LazyAbs: Perform transfer (post image) from CFA node 51 (line no: 10) to CFA node 51 (line no: 10).
+PredAbsTransferRelation: Important (or relevant) pre predicates are 
+PredAbsTransferRelation: Important (or relevant) post predicates are 
+PredAbsTransferRelation: Region expression TRUE
+PredAbsTransferRelation: Perform abstract post.
+PredAbsTransferRelation: Successor region expression TRUE
+LazyAbs: Add ART node 3 (CFA node 51, line no: 10) into the worklist (stack or queue).
+LazyCEGAR: Add new ART nodes in the following order: 
+LazyCEGAR: - ART node 3.
+LazyCEGAR: - ART node 2.
+
+LazyAbs: Get ART node 2 (CFA node 52, line no: 20).
+LazyAbs: CFA node 52 is an error location.
+LazyAbs: Build a counter example.
+LazyAbs: Built counter example is abstract (spurious).
+LazyAbs: Print counter example 
+[main] line no: 9 (ART node 0, CFA node 50)*
+[main] line no: 10 (ART node 1, CFA node 51)
+[main] line no: 20 (ART node 2, CFA node 52)
+
+LazyAbs: Do refinement.
+PredAbsRefiner: At ART node 1 (CFA node 51, line no: 10) discovered interpolants ((M + (N + copy * -1) <= 0 & 0 <= M + (N + copy * -1)) & 0 = size).
+PredAbsRefiner: Add predicate M + (N + copy * -1) <= 0 at CFA node 51 (line no: 10).
+PredAbsRefiner: Add predicate 0 <= M + (N + copy * -1) at CFA node 51 (line no: 10).
+PredAbsRefiner: Add predicate 0 = size at CFA node 51 (line no: 10).
+PredAbsRefiner: At ART node 2 (CFA node 52, line no: 20) discovered interpolants FALSE.
+PredAbsRefiner: Updated precision 
+PredAbsRefiner:   Number of all predicates is 3.
+PredAbsRefiner:   Average number of predicates per location is 3.
+
+LazyAbs: Refinement succeeds, precision might get refined by the last recent refinement.
+LazyAbs: Refine ART.
+LazyAbs: Remove subtrees of ART.
+LazyAbs: Backtrack point is ART node 0.
+LazyAbs: Perform transfer (post image) from CFA node 50 (line no: 9) to CFA node 51 (line no: 10).
+PredAbsTransferRelation: Important (or relevant) pre predicates are 
+PredAbsTransferRelation: Important (or relevant) post predicates are M + (N + copy * -1) <= 0; 0 <= M + (N + copy * -1); 0 = size; 
+PredAbsTransferRelation: Region expression TRUE
+PredAbsTransferRelation: Perform abstract post.
+PredAbsTransferRelation: Successor region expression ("M + (N + copy * -1) <= 0" & ("0 <= M + (N + copy * -1)" & "0 = size"))
+LazyAbs: Refining ART node 1 (CFA node 51).
+LazyAbs: Deleting ART starting from ART node 2.
+LazyAbs: Deleting ART starting from ART node 3.
+
+LazyAbs: Get ART node 1 (CFA node 51, line no: 10).
+LazyAbs: Check coverage ART node 1.
+LazyAbs: Expand ART node 1 (Unwind CFA node 51).
+LazyAbs: Perform transfer (post image) from CFA node 51 (line no: 10) to CFA node 52 (line no: 20).
+PredAbsTransferRelation: Important (or relevant) pre predicates are M + (N + copy * -1) <= 0; 0 <= M + (N + copy * -1); 0 = size; 
+PredAbsTransferRelation: Important (or relevant) post predicates are 
+PredAbsTransferRelation: Region expression ("M + (N + copy * -1) <= 0" & ("0 <= M + (N + copy * -1)" & "0 = size"))
+PredAbsTransferRelation: Perform abstract post.
+PredAbsTransferRelation: Successor region expression FALSE
+LazyAbs: Successor abstract state for CFA node 52 (line no: 20) is bottom.
+LazyAbs: Perform transfer (post image) from CFA node 51 (line no: 10) to CFA node 51 (line no: 10).
+PredAbsTransferRelation: Important (or relevant) pre predicates are M + (N + copy * -1) <= 0; 0 <= M + (N + copy * -1); 0 = size; 
+PredAbsTransferRelation: Important (or relevant) post predicates are M + (N + copy * -1) <= 0; 0 <= M + (N + copy * -1); 0 = size; 
+PredAbsTransferRelation: Region expression ("M + (N + copy * -1) <= 0" & ("0 <= M + (N + copy * -1)" & "0 = size"))
+PredAbsTransferRelation: Perform abstract post.
+PredAbsTransferRelation: Successor region expression FALSE
+LazyAbs: Successor abstract state for CFA node 51 (line no: 10) is bottom.
+
+Result: Safe.
+ -------------------------------- 
+
+General statistics: 
+------------------  
+Total time : 0.060003s
+Parsing : 0s
+Type checking : 0s
+CFA building (including encoding) : 0.004s
+CFA : 
+  Number of locations : 5
+  Number of error locations : 1
+Analysis time : 0.032002s
+
+
+Analysis result: 
+---------------  
+Status : Safe.
+ART size : 2
+Search completeness : yes
+
+
+Static analysis: 
+---------------  
+CFA optimizations : 
+  Total time for CFA optimizations : 0s
+  Number of optimizer calls : 0
+
+
+CEGAR algorithm: 
+---------------  
+Lazy CEGAR : 
+  Transfer : 
+    Number of transfers : 6
+    Total time for transfers : 0.024002s
+    Average time for transfer : 0.00400033s
+    Max time for transfers : 0.008001s
+  Counter-example (cex) building : 
+    Number of cex building : 1
+    Total time for cex building : 0.004s
+    Average time for cex building : 0.004s
+    Max time for cex building : 0.004s
+  Refinments : 
+    Number of refinements : 1
+    Total time for refinements : 0.004s
+    Average time for refinements : 0.004s
+    Max time for refinements : 0.004s
+  Number of encountered errors : 0
+
+
+Program analysis: 
+----------------  
+Transfer relation : 
+  Number of abstract post computation : 6
+  Total time for abstract post computation : 0.020002s
+  Average time for abstract post computation : 0.00333367s
+  Max time for abstract post computation : 0.008001s
+  Number of cache hits : 0
+  Average predicate reduction : 0%
+  Max predicate reduction : 0%
+
+Stop operator : 
+  Number of coverage checks : 0
+  Total time for coverage checks : 0s
+  Average time for coverage checks : 0s
+  Max time for coverage checks : 0s
+
+State order : 
+  Number of subsumptions : 6
+  Number of constraint solving : 0
+  Total time for constraint solving : 0s
+  Average time for constraint solving : 0s
+  Max time for constraint solving : 0s
+
+Precision : 
+  Number of discovered predicates : 3
+  Average number of predicates per location : 3
+  Max number of predicates in a location : 3
+
+
+Counter-example analysis: 
+------------------------  
+Counter-example builder : 
+  Number of constraint solving : 1
+  Total time for constraint solving : 0s
+  Average time for constraint solving : 0s
+  Max time for constraint solving : 0s
+
+
+Refinement: 
+----------  
+Interpolant-based refiner : 
+  Number of interpolant generations : 2
+  Total time for interpolant generations : 0.004s
+  Average time for interpolant generations : 0.002s
+  Max time for interpolant generations : 0.004s
+
+
+Transition building (summarization): 
+-----------------------------------  
+Transition builder : 
+  Number of transition building : 3
+  Total time for transition building : 0s
+  Average time for transition building : 0s
+  Max time for transition building : 0s
+  Number of cache hits : 7
+
+
+Safe.

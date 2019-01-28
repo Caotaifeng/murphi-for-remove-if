@@ -1,0 +1,277 @@
+Main: Log time is Sat Jan 26 05:41:54 2019
+
+Main: Parse input file tests/loop5.c.
+Main: Type check AST.
+Main: Build CFA.
+Main: Encode CFA main.
+Main: Perform lazy abstraction.
+
+LazyAbs: Get ART node 0 (CFA node 44, line no: 7).
+LazyAbs: Check coverage ART node 0.
+LazyAbs: Expand ART node 0 (Unwind CFA node 44).
+LazyAbs: Perform transfer (post image) from CFA node 44 (line no: 7) to CFA node 45 (line no: 11).
+PredAbsTransferRelation: Important (or relevant) pre predicates are 
+PredAbsTransferRelation: Important (or relevant) post predicates are 
+PredAbsTransferRelation: Region expression TRUE
+PredAbsTransferRelation: Perform abstract post.
+PredAbsTransferRelation: Successor region expression TRUE
+LazyAbs: Add ART node 1 (CFA node 45, line no: 11) into the worklist (stack or queue).
+LazyCEGAR: Add new ART nodes in the following order: 
+LazyCEGAR: - ART node 1.
+
+LazyAbs: Get ART node 1 (CFA node 45, line no: 11).
+LazyAbs: Check coverage ART node 1.
+LazyAbs: Expand ART node 1 (Unwind CFA node 45).
+LazyAbs: Perform transfer (post image) from CFA node 45 (line no: 11) to CFA node 46 (line no: 16).
+PredAbsTransferRelation: Important (or relevant) pre predicates are 
+PredAbsTransferRelation: Important (or relevant) post predicates are 
+PredAbsTransferRelation: Region expression TRUE
+PredAbsTransferRelation: Perform abstract post.
+PredAbsTransferRelation: Successor region expression TRUE
+LazyAbs: Add ART node 2 (CFA node 46, line no: 16) into the worklist (stack or queue).
+LazyAbs: Perform transfer (post image) from CFA node 45 (line no: 11) to CFA node 45 (line no: 11).
+PredAbsTransferRelation: Important (or relevant) pre predicates are 
+PredAbsTransferRelation: Important (or relevant) post predicates are 
+PredAbsTransferRelation: Region expression TRUE
+PredAbsTransferRelation: Perform abstract post.
+PredAbsTransferRelation: Successor region expression TRUE
+LazyAbs: Add ART node 3 (CFA node 45, line no: 11) into the worklist (stack or queue).
+LazyCEGAR: Add new ART nodes in the following order: 
+LazyCEGAR: - ART node 3.
+LazyCEGAR: - ART node 2.
+
+LazyAbs: Get ART node 2 (CFA node 46, line no: 16).
+LazyAbs: CFA node 46 is an error location.
+LazyAbs: Build a counter example.
+LazyAbs: Built counter example is abstract (spurious).
+LazyAbs: Print counter example 
+[main] line no: 7 (ART node 0, CFA node 44)*
+[main] line no: 11 (ART node 1, CFA node 45)
+[main] line no: 16 (ART node 2, CFA node 46)
+
+LazyAbs: Do refinement.
+PredAbsRefiner: At ART node 1 (CFA node 45, line no: 11) discovered interpolants (y <= 0 & 0 <= x + y).
+PredAbsRefiner: Add predicate y <= 0 at CFA node 45 (line no: 11).
+PredAbsRefiner: Add predicate 0 <= x + y at CFA node 45 (line no: 11).
+PredAbsRefiner: At ART node 2 (CFA node 46, line no: 16) discovered interpolants FALSE.
+PredAbsRefiner: Updated precision 
+PredAbsRefiner:   Number of all predicates is 2.
+PredAbsRefiner:   Average number of predicates per location is 2.
+
+LazyAbs: Refinement succeeds, precision might get refined by the last recent refinement.
+LazyAbs: Refine ART.
+LazyAbs: Remove subtrees of ART.
+LazyAbs: Backtrack point is ART node 0.
+LazyAbs: Perform transfer (post image) from CFA node 44 (line no: 7) to CFA node 45 (line no: 11).
+PredAbsTransferRelation: Important (or relevant) pre predicates are 
+PredAbsTransferRelation: Important (or relevant) post predicates are y <= 0; 0 <= x + y; 
+PredAbsTransferRelation: Region expression TRUE
+PredAbsTransferRelation: Perform abstract post.
+PredAbsTransferRelation: Successor region expression ("y <= 0" & "0 <= x + y")
+LazyAbs: Refining ART node 1 (CFA node 45).
+LazyAbs: Deleting ART starting from ART node 2.
+LazyAbs: Deleting ART starting from ART node 3.
+
+LazyAbs: Get ART node 1 (CFA node 45, line no: 11).
+LazyAbs: Check coverage ART node 1.
+LazyAbs: Expand ART node 1 (Unwind CFA node 45).
+LazyAbs: Perform transfer (post image) from CFA node 45 (line no: 11) to CFA node 46 (line no: 16).
+PredAbsTransferRelation: Important (or relevant) pre predicates are y <= 0; 0 <= x + y; 
+PredAbsTransferRelation: Important (or relevant) post predicates are 
+PredAbsTransferRelation: Region expression ("y <= 0" & "0 <= x + y")
+PredAbsTransferRelation: Perform abstract post.
+PredAbsTransferRelation: Successor region expression FALSE
+LazyAbs: Successor abstract state for CFA node 46 (line no: 16) is bottom.
+LazyAbs: Perform transfer (post image) from CFA node 45 (line no: 11) to CFA node 45 (line no: 11).
+PredAbsTransferRelation: Important (or relevant) pre predicates are y <= 0; 0 <= x + y; 
+PredAbsTransferRelation: Important (or relevant) post predicates are y <= 0; 0 <= x + y; 
+PredAbsTransferRelation: Region expression ("y <= 0" & "0 <= x + y")
+PredAbsTransferRelation: Perform abstract post.
+PredAbsTransferRelation: Successor region expression "y <= 0"
+LazyAbs: Add ART node 4 (CFA node 45, line no: 11) into the worklist (stack or queue).
+LazyCEGAR: Add new ART nodes in the following order: 
+LazyCEGAR: - ART node 4.
+
+LazyAbs: Get ART node 4 (CFA node 45, line no: 11).
+LazyAbs: Check coverage ART node 4.
+LazyAbs: - Check entailment against ART node 1 (CFA node 45)
+LazyAbs: Expand ART node 4 (Unwind CFA node 45).
+LazyAbs: Perform transfer (post image) from CFA node 45 (line no: 11) to CFA node 46 (line no: 16).
+PredAbsTransferRelation: Important (or relevant) pre predicates are y <= 0; 0 <= x + y; 
+PredAbsTransferRelation: Important (or relevant) post predicates are 
+PredAbsTransferRelation: Region expression "y <= 0"
+PredAbsTransferRelation: Perform abstract post.
+PredAbsTransferRelation: Successor region expression TRUE
+LazyAbs: Add ART node 5 (CFA node 46, line no: 16) into the worklist (stack or queue).
+LazyAbs: Perform transfer (post image) from CFA node 45 (line no: 11) to CFA node 45 (line no: 11).
+PredAbsTransferRelation: Important (or relevant) pre predicates are y <= 0; 0 <= x + y; 
+PredAbsTransferRelation: Important (or relevant) post predicates are y <= 0; 0 <= x + y; 
+PredAbsTransferRelation: Region expression "y <= 0"
+PredAbsTransferRelation: Perform abstract post.
+PredAbsTransferRelation: Successor region expression "y <= 0"
+LazyAbs: Add ART node 6 (CFA node 45, line no: 11) into the worklist (stack or queue).
+LazyCEGAR: Add new ART nodes in the following order: 
+LazyCEGAR: - ART node 6.
+LazyCEGAR: - ART node 5.
+
+LazyAbs: Get ART node 5 (CFA node 46, line no: 16).
+LazyAbs: CFA node 46 is an error location.
+LazyAbs: Build a counter example.
+LazyAbs: Built counter example is abstract (spurious).
+LazyAbs: Print counter example 
+[main] line no: 7 (ART node 0, CFA node 44)*
+[main] line no: 11 (ART node 1, CFA node 45)
+[main] line no: 11 (ART node 4, CFA node 45)
+[main] line no: 16 (ART node 5, CFA node 46)
+
+LazyAbs: Do refinement.
+PredAbsRefiner: At ART node 1 (CFA node 45, line no: 11) discovered interpolants x <= 0.
+PredAbsRefiner: Add predicate x <= 0 at CFA node 45 (line no: 11).
+PredAbsRefiner: At ART node 4 (CFA node 45, line no: 11) discovered interpolants FALSE.
+PredAbsRefiner: At ART node 5 (CFA node 46, line no: 16) discovered interpolants FALSE.
+PredAbsRefiner: Updated precision 
+PredAbsRefiner:   Number of all predicates is 3.
+PredAbsRefiner:   Average number of predicates per location is 3.
+
+LazyAbs: Refinement succeeds, precision might get refined by the last recent refinement.
+LazyAbs: Refine ART.
+LazyAbs: Remove subtrees of ART.
+LazyAbs: Backtrack point is ART node 0.
+LazyAbs: Perform transfer (post image) from CFA node 44 (line no: 7) to CFA node 45 (line no: 11).
+PredAbsTransferRelation: Important (or relevant) pre predicates are 
+PredAbsTransferRelation: Important (or relevant) post predicates are y <= 0; 0 <= x + y; x <= 0; 
+PredAbsTransferRelation: Region expression TRUE
+PredAbsTransferRelation: Perform abstract post.
+PredAbsTransferRelation: Successor region expression ("y <= 0" & ("0 <= x + y" & "x <= 0"))
+LazyAbs: Refining ART node 1 (CFA node 45).
+LazyAbs: Deleting ART starting from ART node 4.
+
+LazyAbs: Get ART node 1 (CFA node 45, line no: 11).
+LazyAbs: Check coverage ART node 1.
+LazyAbs: Expand ART node 1 (Unwind CFA node 45).
+LazyAbs: Perform transfer (post image) from CFA node 45 (line no: 11) to CFA node 46 (line no: 16).
+PredAbsTransferRelation: Important (or relevant) pre predicates are y <= 0; 0 <= x + y; x <= 0; 
+PredAbsTransferRelation: Important (or relevant) post predicates are 
+PredAbsTransferRelation: Region expression ("y <= 0" & ("0 <= x + y" & "x <= 0"))
+PredAbsTransferRelation: Perform abstract post.
+PredAbsTransferRelation: Successor region expression FALSE
+LazyAbs: Successor abstract state for CFA node 46 (line no: 16) is bottom.
+LazyAbs: Perform transfer (post image) from CFA node 45 (line no: 11) to CFA node 45 (line no: 11).
+PredAbsTransferRelation: Important (or relevant) pre predicates are y <= 0; 0 <= x + y; x <= 0; 
+PredAbsTransferRelation: Important (or relevant) post predicates are y <= 0; 0 <= x + y; x <= 0; 
+PredAbsTransferRelation: Region expression ("y <= 0" & ("0 <= x + y" & "x <= 0"))
+PredAbsTransferRelation: Perform abstract post.
+PredAbsTransferRelation: Successor region expression FALSE
+LazyAbs: Successor abstract state for CFA node 45 (line no: 11) is bottom.
+
+Result: Safe.
+ -------------------------------- 
+
+General statistics: 
+------------------  
+Total time : 0.064004s
+Parsing : 0s
+Type checking : 0s
+CFA building (including encoding) : 0s
+CFA : 
+  Number of locations : 6
+  Number of error locations : 1
+Analysis time : 0.040003s
+
+
+Analysis result: 
+---------------  
+Status : Safe.
+ART size : 2
+Search completeness : yes
+
+
+Static analysis: 
+---------------  
+CFA optimizations : 
+  Total time for CFA optimizations : 0s
+  Number of optimizer calls : 0
+
+
+CEGAR algorithm: 
+---------------  
+Lazy CEGAR : 
+  Transfer : 
+    Number of transfers : 11
+    Total time for transfers : 0.036002s
+    Average time for transfer : 0.00327291s
+    Max time for transfers : 0.004001s
+  Counter-example (cex) building : 
+    Number of cex building : 2
+    Total time for cex building : 0.004001s
+    Average time for cex building : 0.0020005s
+    Max time for cex building : 0.004001s
+  Refinments : 
+    Number of refinements : 2
+    Total time for refinements : 0s
+    Average time for refinements : 0s
+    Max time for refinements : 0s
+  Number of encountered errors : 0
+
+
+Program analysis: 
+----------------  
+Transfer relation : 
+  Number of abstract post computation : 11
+  Total time for abstract post computation : 0.028001s
+  Average time for abstract post computation : 0.00254555s
+  Max time for abstract post computation : 0.004001s
+  Number of cache hits : 0
+  Average predicate reduction : 0%
+  Max predicate reduction : 0%
+
+Stop operator : 
+  Number of coverage checks : 1
+  Total time for coverage checks : 0s
+  Average time for coverage checks : 0s
+  Max time for coverage checks : 0s
+
+State order : 
+  Number of subsumptions : 12
+  Number of constraint solving : 1
+  Total time for constraint solving : 0s
+  Average time for constraint solving : 0s
+  Max time for constraint solving : 0s
+
+Precision : 
+  Number of discovered predicates : 3
+  Average number of predicates per location : 3
+  Max number of predicates in a location : 3
+
+
+Counter-example analysis: 
+------------------------  
+Counter-example builder : 
+  Number of constraint solving : 2
+  Total time for constraint solving : 0.004001s
+  Average time for constraint solving : 0.0020005s
+  Max time for constraint solving : 0.004001s
+
+
+Refinement: 
+----------  
+Interpolant-based refiner : 
+  Number of interpolant generations : 5
+  Total time for interpolant generations : 0s
+  Average time for interpolant generations : 0s
+  Max time for interpolant generations : 0s
+
+
+Transition building (summarization): 
+-----------------------------------  
+Transition builder : 
+  Number of transition building : 3
+  Total time for transition building : 0.004001s
+  Average time for transition building : 0.00133367s
+  Max time for transition building : 0.004001s
+    CFA name : main
+    From CFA node 45 to CFA node 46
+  Number of cache hits : 18
+
+
+Safe.
